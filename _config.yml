@@ -22,10 +22,10 @@ repository               : "lingerze/lingerze.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "g图片.jpg"
   name             : "Lingerze"
   pronouns         : # example: "she/her"  
-  bio              : "keep hunger,keep foolish"
+  bio              : "stay hungry,stay foolish"
   location         : "Earth"
   employer         : "Sun yat-sen University"
   uri              : # URL
