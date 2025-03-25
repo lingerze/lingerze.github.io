@@ -14,6 +14,7 @@ I'm an undergraduate student major in IE (Information Engineering) from the [Su
 
 ## About Me
 
+
 ### A Journey of Curiosity and Passion
 
 Hello! I'm an enthusiastic learner and researcher who believes that a fulfilling life is built on diverse passions and experiences. My academic journey is driven by a fascination with technology, and my research projects are a constant playground for innovative ideas. But there's more to me than just algorithms and data — I celebrate life through a multitude of interests.
