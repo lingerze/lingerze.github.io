@@ -10,7 +10,7 @@ redirect_from:
 
 Who am i?
 ------
-I'm an undergraduate student major in IE (Information Engineering) from the [Sun Yat-sen University](https://www.sysu.edu.cn/). My research interests include Neural Networks, Generalized Reasoning, and Multimodal Models.
+I'm an undergraduate student major in IE (Information Engineering) from the [Sun Yat-sen University](https://www.sysu.edu.cn/). My research interests include Multi-Modal Reasoning and Planning with (Multi-Modal) Large Language Models (e.g., LLM, VLM, VLA, VLN, etc.), Generalized Reasoning.
 
 ## About Me
 
