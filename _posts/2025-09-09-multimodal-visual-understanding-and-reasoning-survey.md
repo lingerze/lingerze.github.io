@@ -1,7 +1,7 @@
 ---
 title: "多模态视觉理解与推理文献综述"
 date: 2025-09-09
-permalink: /talks/multimodal-summary/
+permalink: /posts/2025/09/multimodal-visual-reasoning-survey/
 tags:
   - talk
 location: "Canton,China"
