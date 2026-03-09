@@ -1,9 +1,9 @@
 ---
-title: "多模态视觉理解与推理文献综述" 
-collection: talks
-type: "Talk"
-permalink: /talks/multimodal-summary
+title: "多模态视觉理解与推理文献综述"
 date: 2025-09-09
+permalink: /talks/multimodal-summary/
+tags:
+  - talk
 location: "Canton,China"
 ---
 
