@@ -1,3 +1,64 @@
 <script src="{{ base_path }}/assets/js/main.min.js"></script>
 
+<script>
+	(function () {
+		var dictionary = {
+			en: {
+				blog_posts_nav: "Blog Posts",
+				blog_posts_title: "Blog Posts",
+				published_label: "Published:",
+				read_more_label: "Read more"
+			},
+			zh: {
+				blog_posts_nav: "博客文章",
+				blog_posts_title: "博客文章",
+				published_label: "发布时间：",
+				read_more_label: "阅读更多"
+			}
+		};
+
+		function getText(key, lang, fallback) {
+			return (dictionary[lang] && dictionary[lang][key]) || fallback;
+		}
+
+		function applyLanguage(lang) {
+			var selected = (lang === "zh") ? "zh" : "en";
+			document.documentElement.setAttribute("lang", selected === "zh" ? "zh-CN" : "en");
+			document.documentElement.setAttribute("data-language", selected);
+			localStorage.setItem("language", selected);
+
+			var languageToggle = document.querySelector("#language-toggle a");
+			if (languageToggle) {
+				languageToggle.textContent = selected === "zh" ? "EN" : "中文";
+			}
+
+			document.querySelectorAll("[data-nav-url]").forEach(function (node) {
+				var navUrl = node.getAttribute("data-nav-url");
+				if (navUrl === "/year-archive/") {
+					node.textContent = getText("blog_posts_nav", selected, node.textContent);
+				}
+			});
+
+			document.querySelectorAll("[data-i18n-key]").forEach(function (node) {
+				var key = node.getAttribute("data-i18n-key");
+				node.textContent = getText(key, selected, node.textContent);
+			});
+		}
+
+		document.addEventListener("DOMContentLoaded", function () {
+			var initialLanguage = localStorage.getItem("language") || "en";
+			applyLanguage(initialLanguage);
+
+			var languageToggle = document.querySelector("#language-toggle");
+			if (languageToggle) {
+				languageToggle.addEventListener("click", function (event) {
+					event.preventDefault();
+					var currentLanguage = document.documentElement.getAttribute("data-language") || "en";
+					applyLanguage(currentLanguage === "zh" ? "en" : "zh");
+				});
+			}
+		});
+	})();
+</script>
+
 {% include analytics.html %}
