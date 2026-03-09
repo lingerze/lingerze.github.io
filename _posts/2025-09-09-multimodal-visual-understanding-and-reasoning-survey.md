@@ -7,7 +7,7 @@ tags:
 location: "Canton,China"
 ---
 
-<a href="/assets/multimodal_research_summary.html" target="_blank" class="text-blue-600 hover:text-blue-800 font-bold underline">点击此处查看交互式文献综述</a>
+<a href="{{ '/assets/multimodal_research_summary.html' | relative_url }}" target="_blank" class="text-blue-600 hover:text-blue-800 font-bold underline">点击此处查看交互式文献综述</a>
 
 ### 引言
 
