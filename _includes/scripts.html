@@ -51,6 +51,23 @@
       var key = el.getAttribute("data-i18n-key");
       if (I18N[sel][key] !== undefined) el.textContent = I18N[sel][key];
     });
+
+    // JS fallback for bilingual blocks (in case CSS fails or is slow)
+    document.querySelectorAll(".lang-en, .lang-zh").forEach(function(el) {
+      if (sel === "zh") {
+        if (el.classList.contains("lang-en")) {
+          el.style.display = "none";
+        } else if (el.classList.contains("lang-zh")) {
+          el.style.display = "block";
+        }
+      } else {
+        if (el.classList.contains("lang-zh")) {
+          el.style.display = "none";
+        } else if (el.classList.contains("lang-en")) {
+          el.style.display = "block";
+        }
+      }
+    });
   }
 
   /* ----------------------------------------------------------------
