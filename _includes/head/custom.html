@@ -1,7 +1,7 @@
 {% include base_path %}
 
 <!-- Anti-flash: apply persisted language before first paint -->
-<script>(function(){var l=localStorage.getItem("language");if(l==="zh")document.documentElement.setAttribute("data-language","zh");})();</script>
+<script>(function(){var l=localStorage.getItem("language")||"en";document.documentElement.setAttribute("data-language",l);})();</script>
 
 <!-- start custom head snippets -->
 

@@ -43,7 +43,9 @@ html[data-theme="dark"] {
 .lang-zh {
   display: none !important;
 }
-
+.lang-en {
+  display: block !important;
+}
 html[data-language="zh"] .lang-en {
   display: none !important;
 }

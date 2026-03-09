@@ -77,9 +77,9 @@
     var saved = localStorage.getItem("language") || "en";
     applyLanguage(saved);
 
-    var toggle = document.getElementById("language-toggle");
-    if (toggle) {
-      toggle.addEventListener("click", function (e) {
+    var toggleLink = document.querySelector("#language-toggle a");
+    if (toggleLink) {
+      toggleLink.addEventListener("click", function (e) {
         e.preventDefault();
         var current = document.documentElement.getAttribute("data-language") || "en";
         applyLanguage(current === "zh" ? "en" : "zh");
