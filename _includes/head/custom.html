@@ -1,5 +1,8 @@
 {% include base_path %}
 
+<!-- Anti-flash: apply persisted language before first paint -->
+<script>(function(){var l=localStorage.getItem("language");if(l==="zh")document.documentElement.setAttribute("data-language","zh");})();</script>
+
 <!-- start custom head snippets -->
 
 <!-- favicon from https://commons.wikimedia.org/wiki/File:OOjs_UI_icon_academic-progressive.svg -->

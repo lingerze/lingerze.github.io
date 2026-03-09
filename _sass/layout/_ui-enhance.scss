@@ -1,169 +1,340 @@
 /* ==========================================================================
-   UI ENHANCEMENTS
+   UI ENHANCEMENTS — Full Design System Upgrade
    ========================================================================== */
 
+/* --------------------------------------------------------------------
+   1. Design Tokens
+   -------------------------------------------------------------------- */
 :root {
-  --ui-surface: #ffffff;
-  --ui-surface-soft: #f6f8fb;
-  --ui-ring: #dbe4ef;
-  --ui-shadow: 0 12px 30px rgba(23, 35, 58, 0.07);
-  --ui-shadow-hover: 0 18px 38px rgba(23, 35, 58, 0.12);
-  --ui-accent: #1f6feb;
+  --ui-surface       : #ffffff;
+  --ui-surface-soft  : #f4f6fb;
+  --ui-surface-hover : #eef2ff;
+  --ui-ring          : #dce3ee;
+  --ui-ring-hover    : #afc0d8;
+  --ui-shadow-sm     : 0 1px 4px rgba(20, 32, 60, 0.06);
+  --ui-shadow        : 0 4px 18px rgba(20, 32, 60, 0.08);
+  --ui-shadow-hover  : 0 10px 32px rgba(20, 32, 60, 0.15);
+  --ui-accent        : #3b7dd8;
+  --ui-accent-bg     : rgba(59, 125, 216, 0.09);
+  --ui-accent-hover  : #2b67bf;
+  --ui-radius        : 12px;
+  --ui-radius-sm     : 7px;
+  --ui-radius-pill   : 999px;
+  --ui-trans         : 0.2s cubic-bezier(.4,0,.2,1);
 }
 
 html[data-theme="dark"] {
-  --ui-surface: #202327;
-  --ui-surface-soft: #2a2f35;
-  --ui-ring: #3a4047;
-  --ui-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-  --ui-shadow-hover: 0 18px 38px rgba(0, 0, 0, 0.5);
-  --ui-accent: #8fb8ff;
+  --ui-surface       : #1e2329;
+  --ui-surface-soft  : #252c38;
+  --ui-surface-hover : #2c3648;
+  --ui-ring          : #36445a;
+  --ui-ring-hover    : #4a5e78;
+  --ui-shadow-sm     : 0 1px 4px rgba(0,0,0,0.25);
+  --ui-shadow        : 0 4px 18px rgba(0,0,0,0.32);
+  --ui-shadow-hover  : 0 10px 32px rgba(0,0,0,0.50);
+  --ui-accent        : #7eb3ff;
+  --ui-accent-bg     : rgba(126, 179, 255, 0.11);
+  --ui-accent-hover  : #9dc5ff;
 }
 
-body {
-  background-image: radial-gradient(circle at 0% 0%, rgba(31, 111, 235, 0.08), transparent 35%),
-    radial-gradient(circle at 100% 100%, rgba(10, 132, 255, 0.07), transparent 38%);
-  background-attachment: fixed;
+/* --------------------------------------------------------------------
+   2. Bilingual content blocks (CSS-driven show/hide)
+   -------------------------------------------------------------------- */
+.lang-zh {
+  display: none !important;
 }
 
+html[data-language="zh"] .lang-en {
+  display: none !important;
+}
+
+html[data-language="zh"] .lang-zh {
+  display: block !important;
+}
+
+/* --------------------------------------------------------------------
+   3. Masthead / Navigation
+   -------------------------------------------------------------------- */
 .masthead {
-  backdrop-filter: blur(8px);
-  background: color-mix(in srgb, var(--global-bg-color) 92%, #ffffff 8%);
-  border-bottom: 1px solid var(--ui-ring);
+  box-shadow: var(--ui-shadow-sm), 0 1px 0 var(--ui-ring);
 }
 
-.greedy-nav {
-  .visible-links {
-    li {
-      &.tail a {
-        margin: 0 0.3rem;
-      }
-    }
-
-    #language-toggle,
-    #theme-toggle {
-      a {
-        min-width: 42px;
-        height: 32px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid var(--ui-ring);
-        border-radius: 999px;
-        background: var(--ui-surface-soft);
-        font-size: 0.82rem;
-        font-weight: 700;
-        letter-spacing: 0.01em;
-        transition: all 0.2s ease;
-      }
-
-      a:hover {
-        background: var(--ui-accent);
-        color: #fff;
-        border-color: var(--ui-accent);
-        transform: translateY(-1px);
-      }
-    }
-  }
+/* Language toggle button */
+#language-toggle a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 52px !important;
+  height: 28px !important;
+  padding: 0 11px !important;
+  margin: 0 3px !important;
+  border: 1.5px solid var(--ui-ring) !important;
+  border-radius: var(--ui-radius-pill) !important;
+  background: var(--ui-surface-soft) !important;
+  color: var(--global-masthead-link-color) !important;
+  font-size: 0.76rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  cursor: pointer !important;
+  transition: background var(--ui-trans), border-color var(--ui-trans), color var(--ui-trans), box-shadow var(--ui-trans) !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
 }
 
-.page {
-  border-radius: 14px;
+#language-toggle a:hover {
+  background: var(--ui-accent) !important;
+  border-color: var(--ui-accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 3px 10px rgba(59, 125, 216, 0.35) !important;
+  text-decoration: none !important;
 }
 
-.archive {
-  .page__title {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1.4rem;
-    padding: 0.35rem 0.85rem;
-    border: 1px solid var(--ui-ring);
-    border-radius: 999px;
-    background: var(--ui-surface-soft);
-    font-size: clamp(1.3rem, 2.6vw, 1.8rem);
-    font-weight: 700;
-    letter-spacing: 0.01em;
-  }
+/* Suppress nav underline animation on control buttons */
+#language-toggle a:before,
+#language-toggle a::before {
+  display: none !important;
 }
 
-.archive__subtitle {
-  margin-top: 2rem;
-  padding-left: 0.2rem;
-  font-size: 1.15rem;
-  color: var(--global-text-color);
+/* Theme toggle — keep size consistent */
+#theme-toggle a {
+  width: 34px !important;
+  height: 28px !important;
+  padding: 0 !important;
+  margin: 0 2px !important;
+  border: 1.5px solid var(--ui-ring) !important;
+  border-radius: var(--ui-radius-pill) !important;
+  background: var(--ui-surface-soft) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: background var(--ui-trans), border-color var(--ui-trans) !important;
+}
+
+#theme-toggle a:hover {
+  background: var(--ui-surface-hover) !important;
+  border-color: var(--ui-accent) !important;
+}
+
+#theme-toggle a:before,
+#theme-toggle a::before {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------
+   4. Author Sidebar Card
+   -------------------------------------------------------------------- */
+.author__avatar img {
+  border-radius: 50%;
+  border: 2px solid var(--ui-ring);
+  box-shadow: 0 0 0 4px var(--ui-accent-bg), var(--ui-shadow);
+  transition: box-shadow var(--ui-trans), border-color var(--ui-trans);
+}
+
+.author__avatar img:hover {
+  border-color: var(--ui-accent);
+  box-shadow: 0 0 0 5px var(--ui-accent-bg), var(--ui-shadow-hover);
+}
+
+.author__name {
+  font-weight: 800 !important;
+  letter-spacing: -0.01em;
+}
+
+/* --------------------------------------------------------------------
+   5. Homepage (About page) typography
+   -------------------------------------------------------------------- */
+.page__content h2 {
+  margin-top: 1.8em;
+  font-size: 1.28rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
   border-bottom: 2px solid var(--ui-ring);
+  padding-bottom: 0.4em;
 }
 
+.page__content h3 {
+  margin-top: 1.3em;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ui-accent);
+}
+
+.page__content ul li {
+  margin-bottom: 0.45em;
+  line-height: 1.72;
+}
+
+/* --------------------------------------------------------------------
+   6. Blog Archive Page — Post Cards
+   -------------------------------------------------------------------- */
+
+/* Archive page title pill */
+.archive .page__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.6rem;
+  padding: 0.28rem 1rem 0.28rem 0.75rem;
+  border: 1.5px solid var(--ui-ring);
+  border-radius: var(--ui-radius-pill);
+  background: var(--ui-surface-soft);
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  box-shadow: var(--ui-shadow-sm);
+}
+
+/* Year badge */
+.archive__subtitle {
+  display: inline-block;
+  margin: 2rem 0 0.85rem;
+  padding: 0.14rem 0.7rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ui-accent);
+  background: var(--ui-accent-bg);
+  border: 1.5px solid var(--ui-ring);
+  border-radius: var(--ui-radius-pill);
+  border-bottom: none;
+}
+
+/* Remove right padding from list items */
 .list__item {
-  padding-right: 0;
-
-  @include breakpoint($medium) {
-    padding-right: 0;
-  }
-
-  @include breakpoint($large) {
-    padding-right: 0;
-  }
-
-  @include breakpoint($x-large) {
-    padding-right: 0;
-  }
+  padding-right: 0 !important;
 }
 
+/* Card gap */
 .archive .list__item {
-  margin: 0 0 1rem;
-
-  .archive__item {
-    padding: 1rem 1.1rem;
-    border: 1px solid var(--ui-ring);
-    border-radius: 12px;
-    background: var(--ui-surface);
-    box-shadow: var(--ui-shadow);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .archive__item:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--ui-shadow-hover);
-  }
-
-  .archive__item-title {
-    font-size: clamp(1.05rem, 2.2vw, 1.25rem);
-    margin-bottom: 0.4rem;
-  }
-
-  .page__date {
-    margin: 0.35rem 0 0.45rem;
-    font-size: 0.88rem;
-    color: var(--global-text-color-light);
-  }
-
-  .archive__item-excerpt {
-    margin-top: 0.35rem;
-    line-height: 1.75;
-  }
-
-  a[data-i18n-key="read_more_label"] {
-    display: inline-flex;
-    align-items: center;
-    margin-top: 0.2rem;
-    padding: 0.2rem 0.55rem;
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--ui-accent) 14%, transparent);
-    text-decoration: none;
-  }
+  margin-bottom: 0.9rem;
 }
 
-@media (max-width: 767px) {
-  .greedy-nav .visible-links #language-toggle a,
-  .greedy-nav .visible-links #theme-toggle a {
-    min-width: 36px;
-    height: 28px;
-    font-size: 0.75rem;
+/* The card */
+.archive .list__item .archive__item {
+  position: relative;
+  padding: 1.2rem 1.4rem;
+  border: 1.5px solid var(--ui-ring);
+  border-radius: var(--ui-radius);
+  background: var(--ui-surface);
+  box-shadow: var(--ui-shadow);
+  overflow: hidden;
+  transition: transform var(--ui-trans), box-shadow var(--ui-trans), border-color var(--ui-trans);
+}
+
+/* Left accent stripe */
+.archive .list__item .archive__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--ui-accent);
+  opacity: 0;
+  transition: opacity var(--ui-trans);
+}
+
+.archive .list__item .archive__item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--ui-shadow-hover);
+  border-color: var(--ui-accent);
+}
+
+.archive .list__item .archive__item:hover::before {
+  opacity: 1;
+}
+
+/* Card title */
+.archive .list__item .archive__item-title {
+  margin-top: 0;
+  margin-bottom: 0.45rem;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.archive .list__item .archive__item-title a {
+  color: var(--global-text-color);
+  text-decoration: none;
+  transition: color var(--ui-trans);
+}
+
+.archive .list__item .archive__item-title a:hover {
+  color: var(--ui-accent);
+  text-decoration: none;
+}
+
+/* Date row */
+.archive .list__item .page__date {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  color: var(--global-text-color-light);
+}
+
+/* Excerpt */
+.archive .list__item .archive__item-excerpt {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.72;
+  opacity: 0.88;
+}
+
+/* Read more pill */
+a[data-i18n-key="read_more_label"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-top: 0.6rem;
+  padding: 0.22rem 0.72rem;
+  border-radius: var(--ui-radius-pill);
+  background: var(--ui-accent-bg);
+  color: var(--ui-accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--ui-trans), color var(--ui-trans);
+}
+
+a[data-i18n-key="read_more_label"]:hover {
+  background: var(--ui-accent);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------
+   7. Footer
+   -------------------------------------------------------------------- */
+.page__footer {
+  border-top: 1px solid var(--ui-ring);
+}
+
+/* --------------------------------------------------------------------
+   8. Responsive
+   -------------------------------------------------------------------- */
+@media (max-width: 600px) {
+  #language-toggle a {
+    min-width: 42px !important;
+    height: 24px !important;
+    font-size: 0.7rem !important;
+  }
+
+  #theme-toggle a {
+    width: 28px !important;
+    height: 24px !important;
   }
 
   .archive .list__item .archive__item {
-    padding: 0.85rem 0.9rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .archive .page__title {
+    font-size: 1.2rem;
   }
 }
