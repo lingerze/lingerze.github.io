@@ -1,20 +1,20 @@
-# The following is the order of the links in the header of the website.
-#
-# Changing the order here will adjust the order and you can also add additional
-# links. Removing a link prevents it from showing in the header, but does not
-# prevent it from being included in the site.
-#
-# NOTE that only one of the CV options should be selected, the first is for the
-#      Markdown formatted page while the second is generated using JSON.
-
 main:
+  - title_en: "Talks"
+    title_zh: "演讲"
+    url: /talks/
 
-  - title: "Talks"
-    url: /talks/    
-
-  - title: "Blog Posts"
+  - title_en: "Blog"
+    title_zh: "博客"
     url: /year-archive/
-    
 
-  - title："More"
-    
+  - title_en: "Publications"
+    title_zh: "论文"
+    url: /publications/
+
+  - title_en: "Projects"
+    title_zh: "项目"
+    url: /portfolio/
+
+  - title_en: "CV"
+    title_zh: "简历"
+    url: /cv/

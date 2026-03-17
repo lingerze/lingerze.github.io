@@ -6,17 +6,31 @@
       <nav id="site-nav" class="greedy-nav">
         <button><div class="navicon"></div></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist"><a href="{{ base_path }}/">{{ site.title }}</a></li>
+          <li class="masthead__menu-item masthead__menu-item--lg persist">
+            <a href="{{ base_path }}/" data-i18n-key="site_title">{{ site.title }}</a>
+          </li>
           {% for link in site.data.navigation.main %}
             {% if link.url contains 'http' %}
               {% assign domain = '' %}
             {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+            {% assign nav_title_en = link.title_en | default: link.title %}
+            {% assign nav_title_zh = link.title_zh | default: link.title %}
+            <li class="masthead__menu-item">
+              <a href="{{ domain }}{{ link.url }}" data-i18n-en="{{ nav_title_en }}" data-i18n-zh="{{ nav_title_zh }}">{{ nav_title_en }}</a>
+            </li>
           {% endfor %}
+          <li id="language-toggle" class="masthead__menu-item persist tail">
+            <a role="button" tabindex="0" aria-label="Switch language" data-i18n-attr="title:language_toggle|aria-label:language_toggle">
+              <i class="fa-solid fa-language" aria-hidden="true"></i>
+              <span id="language-toggle-label">ZH</span>
+            </a>
+          </li>
           <li id="theme-toggle" class="masthead__menu-item persist tail">
-            <a><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
+            <a role="button" tabindex="0" aria-label="Toggle theme" data-i18n-attr="title:theme_toggle|aria-label:theme_toggle">
+              <i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="Toggle theme"></i>
+            </a>
           </li>
         </ul>
         <ul class="hidden-links hidden"></ul>
