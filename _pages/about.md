@@ -1,4 +1,4 @@
----
+﻿---
 permalink: /
 title: ""
 author_profile: true
@@ -7,105 +7,92 @@ redirect_from:
   - /about.html
 ---
 
-<div class="home-redesign">
-  <section class="home-hero-card">
-    <p class="home-hero-card__kicker">
-      <span data-i18n-en="Research · Engineering · Storytelling" data-i18n-zh="科研 · 工程 · 表达">Research · Engineering · Storytelling</span>
-    </p>
-    <h1 class="home-hero-card__title">
-      <span data-lang-block="en">I am Lingerze, an undergraduate researcher focused on robust intelligence and multimodal reasoning.</span>
-      <span data-lang-block="zh">我是李灵泽，一名专注于稳健智能与多模态推理的本科科研探索者。</span>
-    </h1>
-    <p class="home-hero-card__summary">
-      <span data-lang-block="en">At Sun Yat-sen University, I work on neural architectures, generalized reasoning, and practical AI systems that connect research ideas with real-world impact.</span>
-      <span data-lang-block="zh">在中山大学，我围绕神经网络、广义推理与可落地 AI 系统展开研究，努力把学术想法转化为真实价值。</span>
-    </p>
-    <div class="home-hero-card__actions">
-      <a class="home-action home-action--primary" href="/publications/">
-        <span data-i18n-en="Read Publications" data-i18n-zh="查看论文">Read Publications</span>
-      </a>
-      <a class="home-action home-action--ghost" href="/portfolio/">
-        <span data-i18n-en="Explore Projects" data-i18n-zh="浏览项目">Explore Projects</span>
-      </a>
-      <a class="home-action home-action--ghost" href="mailto:lingerze@163.com">
-        <span data-i18n-en="Get in Touch" data-i18n-zh="联系我">Get in Touch</span>
-      </a>
-    </div>
-  </section>
+<div class="lang-en" markdown="1">
 
-  <section class="home-metrics">
-    <article class="home-metric">
-      <p class="home-metric__value">4+</p>
-      <p class="home-metric__label">
-        <span data-i18n-en="Research Directions" data-i18n-zh="研究方向">Research Directions</span>
-      </p>
-    </article>
-    <article class="home-metric">
-      <p class="home-metric__value">10+</p>
-      <p class="home-metric__label">
-        <span data-i18n-en="Hands-on Projects" data-i18n-zh="实践项目">Hands-on Projects</span>
-      </p>
-    </article>
-    <article class="home-metric">
-      <p class="home-metric__value">24/7</p>
-      <p class="home-metric__label">
-        <span data-i18n-en="Curiosity Driven" data-i18n-zh="持续探索">Curiosity Driven</span>
-      </p>
-    </article>
-  </section>
+## Who am I?
 
-  <section class="home-section">
-    <h2 class="home-section__title">
-      <span data-i18n-en="Current Focus" data-i18n-zh="当前关注">Current Focus</span>
-    </h2>
-    <div class="home-focus-grid">
-      <article class="home-focus-card">
-        <h3>
-          <span data-i18n-en="Neural Networks" data-i18n-zh="神经网络">Neural Networks</span>
-        </h3>
-        <p data-lang-block="en">Designing efficient and transferable neural architectures for complex decision environments.</p>
-        <p data-lang-block="zh">设计高效且可迁移的神经网络结构，以应对复杂决策场景。</p>
-      </article>
-      <article class="home-focus-card">
-        <h3>
-          <span data-i18n-en="Generalized Reasoning" data-i18n-zh="广义推理">Generalized Reasoning</span>
-        </h3>
-        <p data-lang-block="en">Building models that can reason across tasks with stronger robustness and interpretability.</p>
-        <p data-lang-block="zh">构建具备跨任务推理能力、并兼顾鲁棒性与可解释性的模型体系。</p>
-      </article>
-      <article class="home-focus-card">
-        <h3>
-          <span data-i18n-en="Multimodal Systems" data-i18n-zh="多模态系统">Multimodal Systems</span>
-        </h3>
-        <p data-lang-block="en">Integrating text, vision, and structured signals into practical systems for real applications.</p>
-        <p data-lang-block="zh">融合文本、视觉与结构化信息，构建可在真实场景中落地的多模态系统。</p>
-      </article>
-    </div>
-  </section>
+I'm an undergraduate student majoring in Information Engineering (IE) at [Sun Yat-sen University](https://www.sysu.edu.cn/).
+My research interests include **Multi-Modal Reasoning** and **Planning with (Multi-Modal) Large Language Models** (e.g., **LLM**, **VLM**, **VLA**, **VLN**, etc.), as well as Generalized Reasoning.
 
-  <section class="home-section home-section--split">
-    <div class="home-section__panel">
-      <h2 class="home-section__title">
-        <span data-i18n-en="Beyond Research" data-i18n-zh="科研之外">Beyond Research</span>
-      </h2>
-      <ul class="home-tag-list">
-        <li><span data-i18n-en="Long-distance Running" data-i18n-zh="长跑">Long-distance Running</span></li>
-        <li><span data-i18n-en="Photography" data-i18n-zh="摄影">Photography</span></li>
-        <li><span data-i18n-en="Music Discovery" data-i18n-zh="音乐探索">Music Discovery</span></li>
-        <li><span data-i18n-en="Literature" data-i18n-zh="文学阅读">Literature</span></li>
-      </ul>
-      <p data-lang-block="en">I use sports to sharpen discipline, photography to train observation, and art to keep creativity alive in technical work.</p>
-      <p data-lang-block="zh">我用运动锻炼专注力，用摄影训练观察力，也通过音乐与文学维持技术工作中的创造力。</p>
-    </div>
-    <div class="home-section__panel home-section__panel--accent">
-      <h2 class="home-section__title">
-        <span data-i18n-en="Open to Collaboration" data-i18n-zh="欢迎合作交流">Open to Collaboration</span>
-      </h2>
-      <p data-lang-block="en">If your work sits at the intersection of AI research, applied engineering, and product experimentation, I would be glad to connect.</p>
-      <p data-lang-block="zh">如果你的方向聚焦于 AI 研究、工程实践或产品实验的交叉地带，欢迎和我交流合作。</p>
-      <a class="home-action home-action--primary" href="mailto:lingerze@163.com">
-        <span data-i18n-en="Email: lingerze@163.com" data-i18n-zh="邮箱：lingerze@163.com">Email: lingerze@163.com</span>
-      </a>
-    </div>
-  </section>
+## About Me
+
+### A Journey of Curiosity and Passion
+
+Hello! I'm an enthusiastic learner and researcher who believes that a fulfilling life is built on diverse passions and experiences. My academic journey is driven by a fascination with technology, and my research projects are a constant playground for innovative ideas. But there's more to me than just algorithms and data -- I celebrate life through a multitude of interests.
+
+## Embracing Life in All Its Dimensions
+
+When I'm not delving into complex research topics, I dive into a vibrant world of creativity and movement:
+
+- **Sports & Fitness:** I keep my mind sharp and my body energized with regular workouts and long-distance runs. The rhythm of physical activity inspires fresh perspectives and fuels my daily productivity.
+- **Photography:** Capturing the beauty of everyday moments through the lens is my way of storytelling. Photography helps me frame the world in new ways and appreciate the art of detail.
+- **Music:** Whether it's exploring new genres or revisiting timeless classics, music is my constant companion. It's the background score that both relaxes and energizes me.
+- **Literature:** I find solace and inspiration in literature. Reading broadens my horizons and enriches my understanding of the human experience, sparking ideas that often influence my technical projects.
+
+### Academic & Research Endeavors
+
+My research work is not just about solving problems -- it's a voyage of discovery. I'm actively involved in projects that push the boundaries of:
+
+- **Neural Networks & Generalized Reasoning:** Exploring models that mirror the adaptability of natural intelligence.
+- **Multimodal Models:** Integrating information across different data streams to develop more comprehensive solutions.
+
+I thrive on collaborating with diverse minds and leveraging interdisciplinary approaches to drive meaningful scientific and technological advancements.
+
+### A Space to Connect
+
+This digital space serves as both a personal journal and a resource hub where I share:
+
+- Detailed insights from my research journey.
+- Reflections on life through the lens of art, music, photography, and literature.
+- Practical projects and code samples that you can explore on my [GitHub](https://github.com/lingerze).
+
+I'm always excited to connect with fellow enthusiasts, exchange ideas, and explore new opportunities for collaboration. If you share a passion for curiosity, innovation, and a well-rounded life, feel free to reach out!
+
+**Welcome to connect:** `lingerze@163.com`
+
+</div>
+
+<div class="lang-zh" markdown="1">
+
+## 关于我
+
+我是[中山大学](https://www.sysu.edu.cn/)信息工程专业的本科生。
+我的研究兴趣包括**多模态推理**以及**基于（多模态）大语言模型的规划**（涵盖 **LLM**、**VLM**、**VLA**、**VLN** 等），以及广义推理方向。
+
+## 个人简介
+
+### 好奇与热情，编织成旅途
+
+你好！我是一个热爱学习与探索的研究者，坚信丰富多彩的生活需要多元的激情与体验。我的学术旅程源于对技术的强烈好奇，研究项目是不断孕育创意的沃土。但我远不止算法与数据我以多种方式拥抱生活，在其中找到属于自己的精彩。
+
+## 全面拥抱生活
+
+在深耕研究之余，我也徜徉在充满创意与活力的世界：
+
+- **运动与健身：** 定期锻炼和长跑让我保持体力充沛、思维敏锐。运动的节律激发全新的视角，为每日注入活力。
+- **摄影：** 用镜头捕捉日常的美，是我讲述故事的方式。摄影让我以全新眼光感知世界，欣赏细节之美。
+- **音乐：** 无论探索新风格还是重温经典，音乐始终是我的忠实伴侣时而使我放松，时而令我振奋。
+- **文学：** 书籍是心灵的慰藉与灵感的源泉。阅读拓展视野，也常为我的技术研究注入新思路。
+
+### 学术与研究方向
+
+我的科研工作不仅仅是解决问题更是一场探索的旅程。我正积极参与以下领域的前沿研究：
+
+- **神经网络与广义推理：** 探索能够模拟自然智能适应性的模型。
+- **多模态模型：** 整合不同数据流信息，构建更全面的解决方案。
+
+我热衷于与不同背景的人协作，借助跨学科方法推动有意义的科学和技术进步。
+
+### 连接彼此的空间
+
+这里既是我的数字日记，也是资源交流的平台，我在这里分享：
+
+- 科研历程的深度思考与心得。
+- 通过艺术、音乐、摄影与文学拓宽的人生感悟。
+- 可在我的 [GitHub](https://github.com/lingerze) 探索的实践项目与代码。
+
+我始终期待与志同道合者相遇，共同交流想法，探索新的合作机会。如果您也对好奇心、创新和丰盈的生活充满热情，欢迎随时联系！
+
+**欢迎联系：** `lingerze@163.com`
+
 </div>

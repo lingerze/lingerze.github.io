@@ -1,10 +1,10 @@
 ---
 title: "The Snowbal： A Moral Symbol Beyond Commerce"
-collection: talks
-type: "Talk"
-permalink: /talks/thoughts
-venue: "China Canton, SYSU"
 date: 2025-07-29
+permalink: /posts/2025/07/snowbal-moral-symbol/
+tags:
+  - talk
+venue: "China Canton, SYSU"
 location: "Canton,China"
 ---
 

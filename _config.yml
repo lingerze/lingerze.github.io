@@ -208,6 +208,7 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
+  parse_block_html: true
 
 
 # These settings control the types of collections used by the template
@@ -219,9 +220,6 @@ collections:
     output: true
     permalink: /:collection/:path/
   portfolio:
-    output: true
-    permalink: /:collection/:path/
-  talks:
     output: true
     permalink: /:collection/:path/
 
@@ -273,14 +271,6 @@ defaults:
       author_profile: true
       share: true
       comment: true
-  # _talks
-  - scope:
-      path: ""
-      type: talks
-    values:
-      layout: talk
-      author_profile: true
-      share: true
 
 
 # Sass/SCSS

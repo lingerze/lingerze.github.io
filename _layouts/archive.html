@@ -17,7 +17,11 @@ layout: default
 
   <div class="archive">
     {% unless page.header.overlay_color or page.header.overlay_image %}
-      <h1 class="page__title">{{ page.title }}</h1>
+      {% if page.url == "/year-archive/" %}
+        <h1 class="page__title" data-i18n-key="blog_posts_title">{{ page.title }}</h1>
+      {% else %}
+        <h1 class="page__title">{{ page.title }}</h1>
+      {% endif %}
     {% endunless %}
     {{ content }}
   </div>

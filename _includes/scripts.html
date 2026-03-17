@@ -1,4 +1,94 @@
 <script src="{{ base_path }}/assets/js/main.min.js"></script>
 <script src="{{ base_path }}/assets/js/lang-switch.js"></script>
 
+<script>
+(function () {
+  /* ----------------------------------------------------------------
+     i18n Dictionary
+  ---------------------------------------------------------------- */
+  var I18N = {
+    en: {
+      home_title:       "Lingerze's Personal Website",
+      blog_posts_nav:   "Blog Posts",
+      blog_posts_title: "Blog Posts",
+      published_label:  "Published:",
+      read_more_label:  "Read more",
+      lang_btn:         "中文"
+    },
+    zh: {
+      home_title:       "Lingerze 个人主页",
+      blog_posts_nav:   "博客文章",
+      blog_posts_title: "博客文章",
+      published_label:  "发布时间：",
+      read_more_label:  "阅读更多",
+      lang_btn:         "EN"
+    }
+  };
+
+  /* ----------------------------------------------------------------
+     Apply language to all i18n-aware elements
+  ---------------------------------------------------------------- */
+  function applyLanguage(lang) {
+    var sel = (lang === "zh") ? "zh" : "en";
+
+    // Persist
+    localStorage.setItem("language", sel);
+
+    // Set html attribute — triggers CSS .lang-en / .lang-zh toggle
+    document.documentElement.setAttribute("data-language", sel);
+
+    // Language button label
+    var btn = document.querySelector("#language-toggle a");
+    if (btn) btn.textContent = I18N[sel].lang_btn;
+
+    // Navigation links with data-nav-url
+    document.querySelectorAll("[data-nav-url]").forEach(function (el) {
+      var url = el.getAttribute("data-nav-url");
+      if (url === "/year-archive/") el.textContent = I18N[sel].blog_posts_nav;
+    });
+
+    // Any element with data-i18n-key
+    document.querySelectorAll("[data-i18n-key]").forEach(function (el) {
+      var key = el.getAttribute("data-i18n-key");
+      if (I18N[sel][key] !== undefined) el.textContent = I18N[sel][key];
+    });
+
+    // JS fallback for bilingual blocks (in case CSS fails or is slow)
+    document.querySelectorAll(".lang-en, .lang-zh").forEach(function(el) {
+      if (sel === "zh") {
+        if (el.classList.contains("lang-en")) {
+          el.style.display = "none";
+        } else if (el.classList.contains("lang-zh")) {
+          el.style.display = "block";
+        }
+      } else {
+        if (el.classList.contains("lang-zh")) {
+          el.style.display = "none";
+        } else if (el.classList.contains("lang-en")) {
+          el.style.display = "block";
+        }
+      }
+    });
+  }
+
+  /* ----------------------------------------------------------------
+     Boot on DOM ready
+  ---------------------------------------------------------------- */
+  document.addEventListener("DOMContentLoaded", function () {
+    var saved = localStorage.getItem("language") || "en";
+    applyLanguage(saved);
+
+    var toggleLink = document.querySelector("#language-toggle a");
+    if (toggleLink) {
+      toggleLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        var current = document.documentElement.getAttribute("data-language") || "en";
+        applyLanguage(current === "zh" ? "en" : "zh");
+      });
+    }
+  });
+})();
+</script>
+
 {% include analytics.html %}
+

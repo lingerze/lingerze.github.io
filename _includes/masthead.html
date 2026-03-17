@@ -15,17 +15,10 @@
             {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            {% assign nav_title_en = link.title_en | default: link.title %}
-            {% assign nav_title_zh = link.title_zh | default: link.title %}
-            <li class="masthead__menu-item">
-              <a href="{{ domain }}{{ link.url }}" data-i18n-en="{{ nav_title_en }}" data-i18n-zh="{{ nav_title_zh }}">{{ nav_title_en }}</a>
-            </li>
+            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}" data-nav-url="{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
           <li id="language-toggle" class="masthead__menu-item persist tail">
-            <a role="button" tabindex="0" aria-label="Switch language" data-i18n-attr="title:language_toggle|aria-label:language_toggle">
-              <i class="fa-solid fa-language" aria-hidden="true"></i>
-              <span id="language-toggle-label">ZH</span>
-            </a>
+            <a role="button" aria-label="Toggle language" title="中英文切换">中文</a>
           </li>
           <li id="theme-toggle" class="masthead__menu-item persist tail">
             <a role="button" tabindex="0" aria-label="Toggle theme" data-i18n-attr="title:theme_toggle|aria-label:theme_toggle">

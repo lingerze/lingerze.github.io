@@ -3,18 +3,7 @@ main:
     title_zh: "演讲"
     url: /talks/
 
-  - title_en: "Blog"
-    title_zh: "博客"
+  - title: "Blog Posts"
     url: /year-archive/
 
-  - title_en: "Publications"
-    title_zh: "论文"
-    url: /publications/
 
-  - title_en: "Projects"
-    title_zh: "项目"
-    url: /portfolio/
-
-  - title_en: "CV"
-    title_zh: "简历"
-    url: /cv/
